@@ -1,0 +1,2661 @@
+[
+    {
+        "property_name": "animationSpeed",
+        "group_name": "misc",
+        "title": "Base animation speed",
+        "description": "All animations within the system base their speed on this value. Smaller values (in seconds) make for faster animations",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "100",
+        "value_parameters": "step=any",
+        "property_value": "0.25s"
+    },
+    {
+        "property_name": "avatarBg",
+        "group_name": "avatar",
+        "title": "Avatar background color",
+        "description": "The basic background of all avatars, graphical and generic",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "100",
+        "property_value": "@xf-contentBg"
+    },
+    {
+        "property_name": "avatarBorderRadius",
+        "group_name": "avatar",
+        "title": "Avatar border radius",
+        "description": "Controls the size of the rounded corners on avatars - a sufficiently large value will make avatars circular",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "200",
+        "property_value": "@xf-borderRadiusSmall"
+    },
+    {
+        "property_name": "avatarDynamicFont",
+        "group_name": "avatar",
+        "title": "Dynamic avatar font",
+        "description": "For letter-based avatars, this is the font employed for the text",
+        "property_type": "value",
+        "value_type": "string",
+        "display_order": "300",
+        "property_value": "'Arial', sans-serif"
+    },
+    {
+        "property_name": "avatarDynamicLineHeight",
+        "group_name": "avatar",
+        "title": "Dynamic avatar base line height",
+        "description": "Use this to help vertically center a dynamic avatar character when changing the font. This will be scaled based on the font size percentage.",
+        "property_type": "value",
+        "value_type": "number",
+        "display_order": "500",
+        "value_parameters": "step=any",
+        "property_value": "1.04"
+    },
+    {
+        "property_name": "avatarDynamicTextPercent",
+        "group_name": "avatar",
+        "title": "Dynamic avatar text size (%)",
+        "description": "Using a value between 0 and 100, this represents the approximate height of a dynamic avatar text character as a percentage of avatar.",
+        "property_type": "value",
+        "value_type": "number",
+        "display_order": "400",
+        "value_parameters": "min=0\nmax=100\nstep=1",
+        "property_value": "60"
+    },
+    {
+        "property_name": "badge",
+        "group_name": "misc",
+        "title": "Badge",
+        "description": "Badges appear to indicate a number if items requiring attention, such as unread messages in your inbox",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "border_radius",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-paletteColor1",
+            "background-color": "@xf-paletteColor5",
+            "border-radius": "@xf-borderRadiusSmall"
+        }
+    },
+    {
+        "property_name": "badgeHighlighted",
+        "group_name": "misc",
+        "title": "Badge - highlighted",
+        "description": "Highlighted badges grab the viewer's attention more and tend to indicate new items to be reviewed",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "color": "white",
+            "background-color": "rgb(224, 48, 48)"
+        }
+    },
+    {
+        "property_name": "bbCodeBlock",
+        "group_name": "bbCode",
+        "title": "BB code blocks",
+        "description": "All BB code blocks within messages make use of these styling rules",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "border_radius",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-contentAltBg",
+            "border-width": "@xf-borderSize",
+            "border-color": "@xf-borderColorLight",
+            "border-left-width": "@xf-borderSizeFeature",
+            "border-left-color": "@xf-borderColorAttention"
+        }
+    },
+    {
+        "property_name": "bbCodeBlockExpandHeight",
+        "group_name": "bbCode",
+        "title": "Maximum expandable BB code block height",
+        "description": "When a large quote is posted in a message, it will expand to this height before a scrollbar appears",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "100",
+        "property_value": "150px"
+    },
+    {
+        "property_name": "bbCodeBlockTitle",
+        "group_name": "bbCode",
+        "title": "BB code blocks - title",
+        "description": "Styles the title section of BB code blocks within messages",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmall",
+            "color": "@xf-textColorAttention"
+        }
+    },
+    {
+        "property_name": "bbCodeInlineCode",
+        "group_name": "bbCode",
+        "title": "BB code block - inline code",
+        "description": "Special styling rules for inline code ([ICODE]) elements.",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "border_width_simple",
+            "border_color_simple",
+            "border_radius_simple",
+            "padding",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmaller",
+            "background-color": "@xf-contentAltBg",
+            "border-width": "@xf-borderSize",
+            "border-color": "@xf-borderColorLight",
+            "border-radius": "@xf-borderRadiusSmall",
+            "padding-top": "1px",
+            "padding-right": "@xf-paddingSmall",
+            "padding-bottom": "1px",
+            "padding-left": "@xf-paddingSmall"
+        }
+    },
+    {
+        "property_name": "blockBorder",
+        "group_name": "block",
+        "title": "Block border framework",
+        "description": "Virtually all blocks have their borders styled with these settings",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "border-width": "@xf-borderSize",
+            "border-top-color": "@xf-borderColorLight",
+            "border-right-color": "@xf-borderColor",
+            "border-bottom-color": "@xf-borderColorHeavy",
+            "border-left-color": "@xf-borderColor"
+        }
+    },
+    {
+        "property_name": "blockBorderRadius",
+        "group_name": "block",
+        "title": "Block border radius",
+        "description": "Controls the size of the curve on block border corners",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "borderRadius",
+        "display_order": "1000",
+        "property_value": "@xf-borderRadiusMedium"
+    },
+    {
+        "property_name": "blockFilterBar",
+        "group_name": "block",
+        "title": "Block filter bar",
+        "description": "When the content of a block can be filtered, the controls to do so are styled here",
+        "property_type": "css",
+        "display_order": "20800",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmall",
+            "color": "@xf-textColorEmphasized",
+            "background-color": "@xf-contentHighlightBg",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorHeavy"
+        }
+    },
+    {
+        "property_name": "blockFooter",
+        "group_name": "block",
+        "title": "Block footer",
+        "description": "When information needs to be conveyed in a footer element for a block, its style is controlled here",
+        "property_type": "css",
+        "display_order": "21200",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmaller",
+            "color": "@xf-textColorDimmed",
+            "background-color": "@xf-contentAltBg",
+            "border-top-width": "@xf-borderSize",
+            "border-top-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "blockHeader",
+        "group_name": "block",
+        "title": "Block header",
+        "description": "Blocks often have title bars at their tops, which are styled here",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeLarger",
+            "color": "@xf-textColorEmphasized",
+            "background-color": "@xf-contentHighlightBg",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "blockLink",
+        "group_name": "misc",
+        "title": "Block link",
+        "description": "Some links are displayed as small blocks such as choices in a popup menu, and their background will highlight when hovered",
+        "property_type": "css",
+        "display_order": "20900",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "text-decoration": "none",
+            "extra": "cursor: pointer;"
+        }
+    },
+    {
+        "property_name": "blockLinkSelected",
+        "group_name": "misc",
+        "title": "Block link - selected",
+        "description": "Styling for block-type links when in their selected state",
+        "property_type": "css",
+        "display_order": "21000",
+        "css_components": [
+            "text",
+            "background",
+            "border_width_simple",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "font-weight": "@xf-fontWeightHeavy",
+            "background-color": "@xf-contentHighlightBg",
+            "border-width": "@xf-borderSizeFeature",
+            "border-color": "@xf-borderColorFeature"
+        }
+    },
+    {
+        "property_name": "blockMinorHeader",
+        "group_name": "block",
+        "title": "Block minor header",
+        "description": "Sub-headings in blocks use these settings",
+        "property_type": "css",
+        "display_order": "20400",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeLarge",
+            "color": "@xf-textColorFeature"
+        }
+    },
+    {
+        "property_name": "blockMinorTabHeader",
+        "group_name": "block",
+        "title": "Block minor tab header",
+        "description": "Used for multi-part, tabbed sub-headings",
+        "property_type": "css",
+        "display_order": "20500",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeNormal",
+            "color": "@xf-textColorEmphasized",
+            "background-color": "@xf-contentBg",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColor"
+        }
+    },
+    {
+        "property_name": "blockMinorTabHeaderSelected",
+        "group_name": "block",
+        "title": "Block minor tab header - selected tab",
+        "description": "Selected tabs from block sub-headings",
+        "property_type": "css",
+        "display_order": "20600",
+        "css_components": [
+            "text",
+            "background",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColorFeature",
+            "border-color": "@xf-borderColorFeature"
+        }
+    },
+    {
+        "property_name": "blockPaddingH",
+        "group_name": "block",
+        "title": "Block padding horizontal",
+        "description": "The horizontal space between the edges of a block and its content",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "padding",
+        "display_order": "100",
+        "property_value": "@xf-paddingLarge"
+    },
+    {
+        "property_name": "blockPaddingV",
+        "group_name": "block",
+        "title": "Block padding vertical",
+        "description": "The vertical space between a block's content and its edges",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "padding",
+        "display_order": "200",
+        "property_value": "@xf-paddingMedium"
+    },
+    {
+        "property_name": "blockTabHeader",
+        "group_name": "block",
+        "title": "Block tab header",
+        "description": "Occasionally, blocks will have multi-part, tab headers, styled with these settings",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeNormal",
+            "color": "@xf-paletteColor2",
+            "background-color": "@xf-paletteColor4",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColor"
+        }
+    },
+    {
+        "property_name": "blockTabHeaderSelected",
+        "group_name": "block",
+        "title": "Block tab header - selected tab",
+        "description": "The selected tab in multi-part headers takes additional styling from here",
+        "property_type": "css",
+        "display_order": "20300",
+        "css_components": [
+            "text",
+            "background",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-paletteColor1",
+            "border-color": "@xf-paletteColor2"
+        }
+    },
+    {
+        "property_name": "blockTextHeader",
+        "group_name": "block",
+        "title": "Block text header",
+        "description": "Text headers are used for subtle identification of content areas, without changing the background style or color",
+        "property_type": "css",
+        "display_order": "20700",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeLarge",
+            "color": "@xf-textColorFeature"
+        }
+    },
+    {
+        "property_name": "borderColor",
+        "group_name": "color",
+        "title": "Border color",
+        "description": "Structural borders around blocks of content generally use this color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "borderBasic",
+        "display_order": "4000",
+        "property_value": "xf-intensify(@xf-paletteNeutral1, 14%)"
+    },
+    {
+        "property_name": "borderColorAccentContent",
+        "group_name": "color",
+        "title": "Accent content border color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "borderOther",
+        "display_order": "5200",
+        "property_value": "mix(@xf-paletteAccent1, @xf-paletteAccent2)"
+    },
+    {
+        "property_name": "borderColorAttention",
+        "group_name": "color",
+        "title": "Attention-grabbing border color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "borderOther",
+        "display_order": "5300",
+        "property_value": "@xf-paletteAccent2"
+    },
+    {
+        "property_name": "borderColorFaint",
+        "group_name": "color",
+        "title": "Faint border color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "borderBasic",
+        "display_order": "4100",
+        "property_value": "xf-diminish(@xf-borderColor, 7%)"
+    },
+    {
+        "property_name": "borderColorFeature",
+        "group_name": "color",
+        "title": "Feature border color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "borderOther",
+        "display_order": "5100",
+        "property_value": "@xf-paletteColor3"
+    },
+    {
+        "property_name": "borderColorHeavy",
+        "group_name": "color",
+        "title": "Heavy border color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "borderBasic",
+        "display_order": "4300",
+        "property_value": "xf-intensify(@xf-borderColor, 4%)"
+    },
+    {
+        "property_name": "borderColorHighlight",
+        "group_name": "color",
+        "title": "Highlight border color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "borderOther",
+        "display_order": "5000",
+        "property_value": "@xf-paletteColor2"
+    },
+    {
+        "property_name": "borderColorLight",
+        "group_name": "color",
+        "title": "Light border color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "borderBasic",
+        "display_order": "4200",
+        "property_value": "xf-diminish(@xf-borderColor, 3%)"
+    },
+    {
+        "property_name": "borderRadiusLarge",
+        "group_name": "borderSpacing",
+        "title": "Large border radius",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "borderRadius",
+        "display_order": "1200",
+        "property_value": "6px"
+    },
+    {
+        "property_name": "borderRadiusMedium",
+        "group_name": "borderSpacing",
+        "title": "Medium border radius",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "borderRadius",
+        "display_order": "1100",
+        "property_value": "4px"
+    },
+    {
+        "property_name": "borderRadiusSmall",
+        "group_name": "borderSpacing",
+        "title": "Small border radius",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "borderRadius",
+        "display_order": "1000",
+        "property_value": "2px"
+    },
+    {
+        "property_name": "borderSize",
+        "group_name": "borderSpacing",
+        "title": "Border size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "borderSize",
+        "display_order": "100",
+        "property_value": "1px"
+    },
+    {
+        "property_name": "borderSizeFeature",
+        "group_name": "borderSpacing",
+        "title": "Feature border size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "borderSize",
+        "display_order": "200",
+        "property_value": "3px"
+    },
+    {
+        "property_name": "borderSizeMinorFeature",
+        "group_name": "borderSpacing",
+        "title": "Minor feature border size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "borderSize",
+        "display_order": "300",
+        "property_value": "2px"
+    },
+    {
+        "property_name": "buttonBase",
+        "group_name": "button",
+        "title": "Button base",
+        "description": "Defines the styling for the basic elements that are common to all text-based buttons",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "border_radius",
+            "padding",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmall",
+            "border-radius": "@xf-borderRadiusMedium",
+            "padding-top": "5px",
+            "padding-right": "10px",
+            "padding-bottom": "5px",
+            "padding-left": "10px",
+            "extra": "text-align: center;"
+        }
+    },
+    {
+        "property_name": "buttonCta",
+        "group_name": "button",
+        "title": "Button - call to action",
+        "description": "Call to action buttons sit alone and invite the user to do something, like post a new thread",
+        "property_type": "css",
+        "display_order": "20300",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "contrast(@xf-paletteAccent2)",
+            "background-color": "@xf-paletteAccent2"
+        }
+    },
+    {
+        "property_name": "buttonDefault",
+        "group_name": "button",
+        "title": "Button - default",
+        "description": "Most buttons use this styling, except for primary form submit buttons",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-paletteColor1",
+            "background-color": "@xf-paletteColor4"
+        }
+    },
+    {
+        "property_name": "buttonDisabled",
+        "group_name": "button",
+        "title": "Button - disabled",
+        "description": "When buttons are disabled and unclickable, they use these styling rules",
+        "property_type": "css",
+        "display_order": "20400",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-inputDisabled--color",
+            "font-style": "italic",
+            "background-color": "@xf-inputDisabled--background-color",
+            "extra": "cursor: default;"
+        }
+    },
+    {
+        "property_name": "buttonPrimary",
+        "group_name": "button",
+        "title": "Button - primary",
+        "description": "These rules are used mostly for the main submit button for forms",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "contrast(@xf-paletteColor3)",
+            "background-color": "@xf-paletteColor3",
+            "extra": "min-width: 80px;"
+        }
+    },
+    {
+        "property_name": "chip",
+        "group_name": "misc",
+        "title": "Chips",
+        "description": "The primary use for chips is in tagging content, where each tag will appear as a chip",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "border_width_simple",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColorDimmed",
+            "background-color": "@xf-contentAltBg",
+            "border-width": "@xf-borderSize",
+            "border-color": "@xf-borderColor"
+        }
+    },
+    {
+        "property_name": "chipHover",
+        "group_name": "misc",
+        "title": "Chips - hovered",
+        "description": "Chip styling is adjusted using these settings when they are hovered",
+        "property_type": "css",
+        "display_order": "20300",
+        "css_components": [
+            "text",
+            "background",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-contentBg"
+        }
+    },
+    {
+        "property_name": "contentAccentBase",
+        "group_name": "content",
+        "title": "Accented content area base",
+        "description": "When attention needs to be directed to content, this background may be employed",
+        "property_type": "css",
+        "display_order": "20300",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColorAccentContent",
+            "background-color": "@xf-contentAccentBg"
+        }
+    },
+    {
+        "property_name": "contentAccentBg",
+        "group_name": "color",
+        "title": "Accented content background color",
+        "description": "This background color is used for further differentiation from regular content",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "contentBg",
+        "display_order": "2400",
+        "property_value": "@xf-paletteAccent1"
+    },
+    {
+        "property_name": "contentAccentLink",
+        "group_name": "content",
+        "title": "Accented content area links",
+        "description": "Links within accented content will be styled with these settings",
+        "property_type": "css",
+        "display_order": "20400",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColorAttention"
+        }
+    },
+    {
+        "property_name": "contentAltBase",
+        "group_name": "content",
+        "title": "Alternate content area base",
+        "description": "When an alternative background needs to be presented along side the main content background, this will be employed",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColor",
+            "background-color": "@xf-contentAltBg"
+        }
+    },
+    {
+        "property_name": "contentAltBg",
+        "group_name": "color",
+        "title": "Alternate content background color",
+        "description": "In order to differentiate it, some content will be presented on this alternative background",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "contentBg",
+        "display_order": "2200",
+        "property_value": "xf-intensify(@xf-contentBg, 3.5%)"
+    },
+    {
+        "property_name": "contentBase",
+        "group_name": "content",
+        "title": "Content area base",
+        "description": "This styling is applied to the background of primary content, such as messages",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColor",
+            "background-color": "@xf-contentBg"
+        }
+    },
+    {
+        "property_name": "contentBg",
+        "group_name": "color",
+        "title": "Content background color",
+        "description": "Most normal content will sit on this background",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "contentBg",
+        "display_order": "2000",
+        "property_value": "@xf-paletteNeutral1"
+    },
+    {
+        "property_name": "contentHighlightBase",
+        "group_name": "content",
+        "title": "Highlighted content area base",
+        "description": "If an area of content is selected, for example a row in a table, its normal background will be substituted with this",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColor",
+            "background-color": "@xf-contentHighlightBg"
+        }
+    },
+    {
+        "property_name": "contentHighlightBg",
+        "group_name": "color",
+        "title": "Highlighted content background color",
+        "description": "When the standard background color is highlighted or selected, it will use this color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "contentBg",
+        "display_order": "2300",
+        "property_value": "@xf-paletteColor1"
+    },
+    {
+        "property_name": "dataListFooter",
+        "group_name": "dataList",
+        "title": "Data list footer",
+        "description": "When data lists have a terminating element at their foot, it is styled here",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmaller",
+            "color": "@xf-textColorDimmed",
+            "background-color": "@xf-contentAltBg",
+            "border-top-width": "@xf-borderSize",
+            "border-top-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "dataListHeader",
+        "group_name": "dataList",
+        "title": "Data list header",
+        "description": "The title bar of a data list is styled with these settings",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmaller",
+            "color": "@xf-textColorEmphasized",
+            "font-weight": "@xf-fontWeightHeavy",
+            "background-color": "@xf-contentHighlightBg",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorHeavy",
+            "extra": "text-transform: uppercase;"
+        }
+    },
+    {
+        "property_name": "dataListPaddingH",
+        "group_name": "dataList",
+        "title": "Data list padding horizontal",
+        "description": "Each row in a data list has this much horizontal padding",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "100",
+        "property_value": "@xf-paddingLarge"
+    },
+    {
+        "property_name": "dataListPaddingV",
+        "group_name": "dataList",
+        "title": "Data list padding vertical",
+        "description": "Data list rows each have this much vertical padding",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "200",
+        "property_value": "@xf-paddingLarge"
+    },
+    {
+        "property_name": "dataListSection",
+        "group_name": "dataList",
+        "title": "Data list section header",
+        "description": "Individual data list sections are divided with this titular header bar",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeLarge",
+            "color": "@xf-textColorEmphasized",
+            "background-color": "@xf-contentHighlightBg",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "editorSelectedBg",
+        "group_name": "rte",
+        "title": "Editor selected text background color",
+        "description": "Background color for text that has been selected in the editor",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "500",
+        "property_value": "@xf-paletteColor2"
+    },
+    {
+        "property_name": "editorSelectedColor",
+        "group_name": "rte",
+        "title": "Editor selected text color",
+        "description": "When text is selected within the text editor, it will use this color",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "400",
+        "property_value": "@xf-textColor"
+    },
+    {
+        "property_name": "editorToolbarActiveColor",
+        "group_name": "rte",
+        "title": "Editor toolbar active color",
+        "description": "When controls on the editor toolbar are active (such as 'B' when bold text is selected), the control will use this color",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "300",
+        "property_value": "@xf-paletteColor3"
+    },
+    {
+        "property_name": "editorToolbarBg",
+        "group_name": "rte",
+        "title": "Editor toolbar background color",
+        "description": "Controls the color of the control bar's background for the text editor",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "100",
+        "property_value": "@xf-contentAltBg"
+    },
+    {
+        "property_name": "editorToolbarBorderColor",
+        "group_name": "rte",
+        "title": "Editor toolbar border color",
+        "description": "Like popup menus, the editor has an upper border accent, controlled here",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "200",
+        "property_value": "@xf-borderColorFeature"
+    },
+    {
+        "property_name": "elementSpacer",
+        "group_name": "borderSpacing",
+        "title": "Element spacer",
+        "description": "This represents the base value for spacing between elements, such as individual blocks.",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "spacer",
+        "display_order": "3000",
+        "property_value": "20px"
+    },
+    {
+        "property_name": "emailBg",
+        "group_name": "email",
+        "title": "Email background color",
+        "description": "Emails sent in HTML format will have this as its background color",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "100",
+        "property_value": "@xf-pageBg"
+    },
+    {
+        "property_name": "emailFont",
+        "group_name": "email",
+        "title": "Email font",
+        "description": "Defines the font (or font list) used for text in HTML emails",
+        "property_type": "value",
+        "value_type": "string",
+        "display_order": "200",
+        "property_value": "@xf-fontFamilyUi"
+    },
+    {
+        "property_name": "emailHeaderColor",
+        "group_name": "email",
+        "title": "Email header text color",
+        "description": "Defines the color of text in the header bar in HTML email",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "300",
+        "property_value": "@xf-textColorFeature"
+    },
+    {
+        "property_name": "fixedMessage",
+        "group_name": "misc",
+        "title": "Fixed message bar",
+        "description": "Occasionally, system messages will be displayed to the visitor in a fixed element that slides down from the top of the window. Its styling is controlled here",
+        "property_type": "css",
+        "display_order": "20400",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "padding",
+            "extra"
+        ],
+        "property_value": {
+            "color": "contrast(@xf-paletteNeutral2)",
+            "background-color": "@xf-paletteNeutral2",
+            "border-top-width": "@xf-borderSize",
+            "border-top-color": "xf-intensify(@xf-paletteNeutral2, 10%)",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "xf-intensify(@xf-paletteNeutral2, 10%)",
+            "padding": "@xf-paddingLarge"
+        }
+    },
+    {
+        "property_name": "fontFamilyBody",
+        "group_name": "fonts",
+        "title": "Body Text Font",
+        "description": "This font is used for the text of messages etc.",
+        "property_type": "value",
+        "value_type": "string",
+        "value_group": "font",
+        "display_order": "200",
+        "property_value": "'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', sans-serif"
+    },
+    {
+        "property_name": "fontFamilyCode",
+        "group_name": "fonts",
+        "title": "Code Font",
+        "description": "The font list used for mono-spaced text input and output",
+        "property_type": "value",
+        "value_type": "string",
+        "value_group": "font",
+        "display_order": "300",
+        "property_value": "Monaco, Menlo, Consolas, 'Roboto Mono', 'Andale Mono', 'Ubuntu Mono', monospace"
+    },
+    {
+        "property_name": "fontFamilyUi",
+        "group_name": "fonts",
+        "title": "User Interface Font",
+        "description": "The font list for your main text",
+        "property_type": "value",
+        "value_type": "string",
+        "value_group": "font",
+        "display_order": "100",
+        "property_value": "'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', sans-serif"
+    },
+    {
+        "property_name": "fontSizeLarge",
+        "group_name": "fonts",
+        "title": "Large font size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "size",
+        "display_order": "1400",
+        "property_value": "17px"
+    },
+    {
+        "property_name": "fontSizeLarger",
+        "group_name": "fonts",
+        "title": "Larger font size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "size",
+        "display_order": "1500",
+        "property_value": "20px"
+    },
+    {
+        "property_name": "fontSizeLargest",
+        "group_name": "fonts",
+        "title": "Largest font size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "size",
+        "display_order": "1600",
+        "property_value": "24px"
+    },
+    {
+        "property_name": "fontSizeNormal",
+        "group_name": "fonts",
+        "title": "Normal font size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "size",
+        "display_order": "1000",
+        "property_value": "15px"
+    },
+    {
+        "property_name": "fontSizeSmall",
+        "group_name": "fonts",
+        "title": "Small font size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "size",
+        "display_order": "1100",
+        "property_value": "13px"
+    },
+    {
+        "property_name": "fontSizeSmaller",
+        "group_name": "fonts",
+        "title": "Smaller font size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "size",
+        "display_order": "1200",
+        "property_value": "12px"
+    },
+    {
+        "property_name": "fontSizeSmallest",
+        "group_name": "fonts",
+        "title": "Smallest font size",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "size",
+        "display_order": "1300",
+        "property_value": "11px"
+    },
+    {
+        "property_name": "fontWeightHeavy",
+        "group_name": "fonts",
+        "title": "Heavy font weight",
+        "property_type": "value",
+        "value_type": "number",
+        "value_group": "weight",
+        "display_order": "2200",
+        "property_value": "700"
+    },
+    {
+        "property_name": "fontWeightLight",
+        "group_name": "fonts",
+        "title": "Light font weight",
+        "property_type": "value",
+        "value_type": "number",
+        "value_group": "weight",
+        "display_order": "2100",
+        "property_value": "300"
+    },
+    {
+        "property_name": "fontWeightNormal",
+        "group_name": "fonts",
+        "title": "Normal font weight",
+        "property_type": "value",
+        "value_type": "number",
+        "value_group": "weight",
+        "display_order": "2000",
+        "property_value": "400"
+    },
+    {
+        "property_name": "formExplain",
+        "group_name": "form",
+        "title": "Form element explanation text",
+        "description": "Additional information about form controls may sometimes be found immediately below the control being explained",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmall",
+            "color": "@xf-textColorMuted"
+        }
+    },
+    {
+        "property_name": "formHint",
+        "group_name": "form",
+        "title": "Form element hint text",
+        "description": "Within the label column, some controls may require an additional hint to define their role",
+        "property_type": "css",
+        "display_order": "20150",
+        "css_components": [
+            "text",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmaller",
+            "color": "@xf-textColorMuted"
+        }
+    },
+    {
+        "property_name": "formLabel",
+        "group_name": "form",
+        "title": "Form label column",
+        "description": "In full-width forms, the left column contains labels for the controls in the right column",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-contentAltBg",
+            "border-color": "@xf-borderColorLight",
+            "extra": "text-align: right;"
+        }
+    },
+    {
+        "property_name": "formLabelWidth",
+        "group_name": "form",
+        "title": "Form label column width",
+        "description": "This should be expressed as a percentage.",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "100",
+        "property_value": "33%"
+    },
+    {
+        "property_name": "formResponsive",
+        "group_name": "form",
+        "title": "Form row responsive break point",
+        "description": "When the viewport width is below this value, the two-column layout will collapse into a single column version",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "500",
+        "property_value": "@xf-responsiveMedium"
+    },
+    {
+        "property_name": "formRowPaddingHInner",
+        "group_name": "form",
+        "title": "Form row horizontal padding (inner)",
+        "description": "This horizontal padding is applied to the touching edges of the label and controls columns",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "300",
+        "property_value": "@xf-paddingLarge"
+    },
+    {
+        "property_name": "formRowPaddingHOuter",
+        "group_name": "form",
+        "title": "Form row horizontal padding (outer)",
+        "description": "This padding is applied to the outer edges of the form content",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "400",
+        "property_value": "@xf-blockPaddingH"
+    },
+    {
+        "property_name": "formRowPaddingV",
+        "group_name": "form",
+        "title": "Form row vertical padding",
+        "description": "Each form row has this padding above and below its content",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "200",
+        "property_value": "15px"
+    },
+    {
+        "property_name": "formSectionHeader",
+        "group_name": "form",
+        "title": "Form section header",
+        "description": "Occasionally, forms are long enough to warrant being divided into sections, with each section headed by an element using these style rules",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeLarge",
+            "color": "@xf-textColorFeature",
+            "border-top-width": "@xf-borderSize",
+            "border-top-color": "@xf-borderColor",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorFaint"
+        }
+    },
+    {
+        "property_name": "formSubmitRow",
+        "group_name": "form",
+        "title": "Form submit row",
+        "description": "At the bottom of most forms is a bar containing the submit button etc.",
+        "property_type": "css",
+        "display_order": "20400",
+        "css_components": [
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-contentHighlightBg",
+            "border-top-width": "@xf-borderSize",
+            "border-top-color": "@xf-borderColorHeavy"
+        }
+    },
+    {
+        "property_name": "formSubmitSticky",
+        "group_name": "form",
+        "title": "Enable sticky form submit rows",
+        "description": "If selected, longer forms may attach their submit rows to the bottom of the window when they wouldn't otherwise be visible.",
+        "property_type": "value",
+        "value_type": "boolean",
+        "display_order": "600",
+        "property_value": "1"
+    },
+    {
+        "property_name": "globalActionColor",
+        "group_name": "misc",
+        "title": "Global action indicator color",
+        "description": "This is the base color of the gadgets that display when an action is being processed in the background.",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "400",
+        "property_value": "@xf-paletteAccent2"
+    },
+    {
+        "property_name": "inlineModBar",
+        "group_name": "inlineMod",
+        "title": "Inline moderation bar",
+        "description": "A bar containing controls appears when content is selected for inline moderation. Its appearance is controlled here",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "padding",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-paletteColor2",
+            "background-color": "@xf-paletteColor5",
+            "border-top-width": "@xf-borderSize",
+            "border-top-color": "xf-intensify(@xf-paletteColor5, 10%)",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "xf-intensify(@xf-paletteColor5, 10%)",
+            "padding-top": "@xf-paddingMedium",
+            "padding-bottom": "@xf-paddingMedium"
+        }
+    },
+    {
+        "property_name": "inlineModHighlightColor",
+        "group_name": "inlineMod",
+        "title": "Inline moderation highlight color",
+        "description": "When content is selected for inline moderation, its background color will be replaced with this",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "100",
+        "property_value": "mix(@xf-paletteAccent1, @xf-contentBg, 65%)"
+    },
+    {
+        "property_name": "input",
+        "group_name": "input",
+        "title": "Form input",
+        "description": "Controls the style of most text-input boxes",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "border_radius",
+            "padding",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeNormal",
+            "color": "@xf-textColor",
+            "background-color": "mix(@xf-contentBg, @xf-paletteColor1, 60%)",
+            "border-width": "@xf-borderSize",
+            "border-radius": "@xf-borderRadiusMedium",
+            "border-top-color": "@xf-borderColorHeavy",
+            "border-right-color": "@xf-borderColorLight",
+            "border-bottom-color": "@xf-borderColorLight",
+            "border-left-color": "@xf-borderColorHeavy",
+            "padding": "@xf-paddingMedium"
+        }
+    },
+    {
+        "property_name": "inputDisabled",
+        "group_name": "input",
+        "title": "Form input - disabled",
+        "description": "When text boxes are disabled, these rules are applied",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColorDimmed",
+            "font-style": "italic",
+            "background-color": "xf-intensify(@xf-paletteNeutral1, 6%)"
+        }
+    },
+    {
+        "property_name": "inputFocus",
+        "group_name": "input",
+        "title": "Form input - focused",
+        "description": "These rules are applied to text boxes when they are selected for input",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-paletteColor1"
+        }
+    },
+    {
+        "property_name": "lineHeightDefault",
+        "group_name": "fonts",
+        "title": "Line height",
+        "description": "This value controls the amount of spacing between lines of text",
+        "property_type": "value",
+        "value_type": "number",
+        "value_group": "spacing",
+        "display_order": "3000",
+        "value_parameters": "step=0.1\nmax=5",
+        "property_value": "1.4"
+    },
+    {
+        "property_name": "link",
+        "group_name": "page",
+        "title": "Links",
+        "description": "These are the styling rules for basic hyperlinks throughout the system",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-linkColor",
+            "text-decoration": "none"
+        }
+    },
+    {
+        "property_name": "linkColor",
+        "group_name": "color",
+        "title": "Link color",
+        "description": "Basic hyperlinks on standard background colors will use this style",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "link",
+        "display_order": "1000",
+        "property_value": "@xf-paletteColor4"
+    },
+    {
+        "property_name": "linkHover",
+        "group_name": "page",
+        "title": "Links - hovered",
+        "description": "When basic links are hovered, they use this set of rules for their styling",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-linkHoverColor",
+            "text-decoration": "underline"
+        }
+    },
+    {
+        "property_name": "linkHoverColor",
+        "group_name": "color",
+        "title": "Link hover color",
+        "description": "Basic hyperlinks will turn this color when hovered",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "link",
+        "display_order": "1100",
+        "property_value": "@xf-paletteColor5"
+    },
+    {
+        "property_name": "memberHeader",
+        "group_name": "member",
+        "title": "Member profile header",
+        "description": "The member profile page's content header is styled with these settings",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-contentHighlightBg",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "memberHeaderName",
+        "group_name": "member",
+        "title": "Member profile header - name",
+        "description": "The styling of the name of the member whose page is being viewed is controlled here",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeLargest",
+            "color": "@xf-textColorEmphasized"
+        }
+    },
+    {
+        "property_name": "memberTooltipHeader",
+        "group_name": "member",
+        "title": "Member tooltip header",
+        "description": "The member tooltip, which appears when hovering over user names, is styled with these controls",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-contentHighlightBg",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "memberTooltipName",
+        "group_name": "member",
+        "title": "Member tooltip header - name",
+        "description": "Styling for the name of the user whose tooltip is being displayed",
+        "property_type": "css",
+        "display_order": "20300",
+        "css_components": [
+            "text",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeLargest",
+            "color": "@xf-textColorEmphasized"
+        }
+    },
+    {
+        "property_name": "menu",
+        "group_name": "menu",
+        "title": "Menu",
+        "description": "Controls the main block of all popup menus",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border_width_simple",
+            "border_color_simple",
+            "border_radius_simple",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmall",
+            "color": "@xf-textColor",
+            "background-color": "@xf-contentBg",
+            "border-width": "@xf-borderSize",
+            "border-color": "@xf-borderColor",
+            "border-radius": "@xf-borderRadiusSmall"
+        }
+    },
+    {
+        "property_name": "menuFeatureBorderColor",
+        "group_name": "menu",
+        "title": "Menu feature border color",
+        "description": "Popup menus have a thick feature border on their upper edge, the styling of which is controlled here",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "100",
+        "property_value": "@xf-paletteColor3"
+    },
+    {
+        "property_name": "menuFooter",
+        "group_name": "menu",
+        "title": "Menu footer",
+        "description": "When a popup menu has a bottom, footer element, it will use these settings",
+        "property_type": "css",
+        "display_order": "20400",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmaller",
+            "color": "@xf-textColorDimmed",
+            "background-color": "@xf-contentAltBg",
+            "border-top-width": "@xf-borderSize",
+            "border-top-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "menuHeader",
+        "group_name": "menu",
+        "title": "Menu header",
+        "description": "Most menus identify themselves with a header just underneath their top border",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeLarge",
+            "color": "@xf-paletteColor3",
+            "background-color": "@xf-paletteColor1",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "menuTabHeader",
+        "group_name": "menu",
+        "title": "Menu tab header",
+        "description": "Multi-part, tabbed menu headers use these settings",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeNormal",
+            "color": "@xf-paletteColor4",
+            "background-color": "@xf-paletteColor1",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "menuTabHeaderSelected",
+        "group_name": "menu",
+        "title": "Menu tab header - selected tab",
+        "description": "Controls the selected tab in multi-part menu headers",
+        "property_type": "css",
+        "display_order": "20300",
+        "css_components": [
+            "text",
+            "background",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColorFeature",
+            "border-color": "@xf-borderColorFeature"
+        }
+    },
+    {
+        "property_name": "messageNewIndicator",
+        "group_name": "message",
+        "title": "New message indicator",
+        "description": "Usually a small token attached to the message block, the indicator that a message is new/unread is controlled here",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "border_radius",
+            "padding",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "90%",
+            "color": "contrast(@xf-paletteAccent2)",
+            "background-color": "@xf-paletteAccent2",
+            "border-radius": "@xf-borderRadiusSmall",
+            "padding-top": "1px",
+            "padding-right": "4px",
+            "padding-bottom": "1px",
+            "padding-left": "4px"
+        }
+    },
+    {
+        "property_name": "messagePadding",
+        "group_name": "message",
+        "title": "Message padding",
+        "description": "When using the full-size message block, this value defines the size of the padding around the message text",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "100",
+        "property_value": "@xf-paddingLarge"
+    },
+    {
+        "property_name": "messagePaddingSmall",
+        "group_name": "message",
+        "title": "Message padding small",
+        "description": "This value controls the padding around the message text when using the small message block",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "200",
+        "property_value": "@xf-paddingMedium"
+    },
+    {
+        "property_name": "messageSignature",
+        "group_name": "message",
+        "title": "Message signature",
+        "description": "Any rules used to apply styling to users' signatures in their messages are defined here",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "padding",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmaller",
+            "color": "@xf-textColorMuted",
+            "border-top-width": "@xf-borderSize",
+            "border-top-color": "@xf-borderColorLight",
+            "padding-top": "3px"
+        }
+    },
+    {
+        "property_name": "messageSingleColumnWidth",
+        "group_name": "message",
+        "title": "Message single column break point",
+        "description": "When the viewport is smaller than this value, the user column will collapse, leaving a single-column message layout",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "300",
+        "property_value": "@xf-responsiveMedium"
+    },
+    {
+        "property_name": "messageUserBlock",
+        "group_name": "message",
+        "title": "Message user info block",
+        "description": "Apart from its width, the (left) message user info column is styled here",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border_width_simple",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-contentAltBg",
+            "border-width": "@xf-borderSize",
+            "border-color": "@xf-borderColor"
+        }
+    },
+    {
+        "property_name": "messageUserBlockWidth",
+        "group_name": "message",
+        "title": "Message user info block width",
+        "description": "Controls the width of the (left) user info column on the full size message block",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "400",
+        "property_value": "120px"
+    },
+    {
+        "property_name": "messageUserElements",
+        "group_name": "message",
+        "title": "Message user info elements",
+        "description": "The elements selected here will be displayed in the message user info block. It will not be displayed below the single column width.",
+        "property_type": "value",
+        "value_type": "template",
+        "display_order": "500",
+        "value_parameters": "template=style_property_template_messageUserElements\ntype=array",
+        "property_value": "[]"
+    },
+    {
+        "property_name": "minorBlockContent",
+        "group_name": "block",
+        "title": "Minor internal block content",
+        "description": "Content within blocks that is of less importance than the main content may be styled here",
+        "property_type": "css",
+        "display_order": "21100",
+        "css_components": [
+            "text",
+            "background",
+            "border_width_simple",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-contentAltBg",
+            "border-width": "@xf-borderSize",
+            "border-color": "@xf-borderColorLight"
+        }
+    },
+    {
+        "property_name": "nodeIconReadColor",
+        "group_name": "nodeList",
+        "title": "Read node icon color",
+        "description": "When the content within a node has been read, its icon will revert to a less attention-grabbing color, defined here",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "200",
+        "property_value": "mix(@xf-paletteColor1, @xf-paletteColor2)"
+    },
+    {
+        "property_name": "nodeIconUnreadColor",
+        "group_name": "nodeList",
+        "title": "Unread node icon color",
+        "description": "Node icons give an at-a-glance indication of whether or not the content housed within the node has been read. The unread icon color should stand out from its background for quick identification",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "100",
+        "property_value": "mix(@xf-paletteAccent1, @xf-paletteAccent2)"
+    },
+    {
+        "property_name": "nodeListDescriptionDisplay",
+        "group_name": "nodeList",
+        "title": "Description display style",
+        "description": "To save vertical space, it is possible to hide node descriptions until the node title is hovered, at which point they are displayed in a tooltip",
+        "property_type": "value",
+        "value_type": "radio",
+        "display_order": "400",
+        "value_parameters": "tooltip={{ phrase('tooltip') }}\ninline={{ phrase('inline') }}\nnone={{ phrase('none') }}",
+        "property_value": "tooltip"
+    },
+    {
+        "property_name": "nodeListSubDisplay",
+        "group_name": "nodeList",
+        "title": "Sub-forums display style",
+        "description": "Choose the style in which sub-forums will be displayed within a particular node element, according to the amount of space you want them to occupy",
+        "property_type": "value",
+        "value_type": "radio",
+        "display_order": "300",
+        "value_parameters": "menu={{ phrase('popup_menu') }}\nflat={{ phrase('listed_below_node') }}\nnone={{ phrase('none') }}",
+        "property_value": "menu"
+    },
+    {
+        "property_name": "noticeScrollInterval",
+        "group_name": "misc",
+        "title": "Scrollable notice interval",
+        "description": "Each scrollable notice will be displayed for this amount of time before the next is displayed. Hovering or interacting with the notices will prevent auto scrolling.",
+        "property_type": "value",
+        "value_type": "number",
+        "display_order": "600",
+        "value_parameters": "min=1\nstep=any\nunits={{ phrase('seconds') }}",
+        "property_value": "6"
+    },
+    {
+        "property_name": "overlayHeader",
+        "group_name": "overlay",
+        "title": "Overlay header",
+        "description": "Overlays use a header element to identify their contents, styled here",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "padding",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeLargest",
+            "color": "@xf-textColorEmphasized",
+            "background-color": "@xf-contentHighlightBg",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorLight",
+            "padding": "@xf-paddingLarge"
+        }
+    },
+    {
+        "property_name": "overlayMaskColor",
+        "group_name": "overlay",
+        "title": "Overlay mask color",
+        "description": "When an overlay is shown, the page behind is masked by the color defined here. Use RGBA transparency to allow the page to show through",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "200",
+        "property_value": "rgba(0, 0, 0, .25)"
+    },
+    {
+        "property_name": "overlayTopMargin",
+        "group_name": "overlay",
+        "title": "Overlay top margin",
+        "description": "This defines the distance between the top of the viewport and the top of the overlay",
+        "property_type": "value",
+        "value_type": "unit",
+        "display_order": "100",
+        "property_value": "4vh"
+    },
+    {
+        "property_name": "paddingLarge",
+        "group_name": "borderSpacing",
+        "title": "Large padding",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "padding",
+        "display_order": "2200",
+        "property_value": "10px"
+    },
+    {
+        "property_name": "paddingLargest",
+        "group_name": "borderSpacing",
+        "title": "Largest padding",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "padding",
+        "display_order": "2300",
+        "property_value": "15px"
+    },
+    {
+        "property_name": "paddingMedium",
+        "group_name": "borderSpacing",
+        "title": "Medium padding",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "padding",
+        "display_order": "2100",
+        "property_value": "6px"
+    },
+    {
+        "property_name": "paddingSmall",
+        "group_name": "borderSpacing",
+        "title": "Small padding",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "padding",
+        "display_order": "2000",
+        "property_value": "3px"
+    },
+    {
+        "property_name": "pageBackground",
+        "group_name": "page",
+        "title": "Page background",
+        "description": "The page background, behind all block elements, uses the styling rules defined here",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "background-color": "@xf-pageBg"
+        }
+    },
+    {
+        "property_name": "pageBg",
+        "group_name": "color",
+        "title": "Page background color",
+        "description": "The background of the page itself, on which all other content rests",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "contentBg",
+        "display_order": "2100",
+        "property_value": "xf-intensify(@xf-contentBg, 7%)"
+    },
+    {
+        "property_name": "pageEdgeSpacer",
+        "group_name": "borderSpacing",
+        "title": "Page edge spacer",
+        "description": "All elements will be spaced at least this far from the edges of the page",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "spacer",
+        "display_order": "3100",
+        "property_value": "10px"
+    },
+    {
+        "property_name": "pageWidthMax",
+        "group_name": "page",
+        "title": "Maximum page width",
+        "description": "As the window is resized, it will continue to grow in width until this value, after which it will remain static",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "page",
+        "display_order": "100",
+        "property_value": "1200px"
+    },
+    {
+        "property_name": "paletteAccent1",
+        "group_name": "palette",
+        "title": "Accent 1",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "accent",
+        "display_order": "2000",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(255, 244, 229)"
+    },
+    {
+        "property_name": "paletteAccent2",
+        "group_name": "palette",
+        "title": "Accent 2",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "accent",
+        "display_order": "2100",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(242, 147, 13)"
+    },
+    {
+        "property_name": "paletteAccent3",
+        "group_name": "palette",
+        "title": "Accent 3",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "accent",
+        "display_order": "2200",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(170, 103, 9)"
+    },
+    {
+        "property_name": "paletteColor1",
+        "group_name": "palette",
+        "title": "Color 1",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "primary",
+        "display_order": "1000",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(237, 246, 253)"
+    },
+    {
+        "property_name": "paletteColor2",
+        "group_name": "palette",
+        "title": "Color 2",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "primary",
+        "display_order": "1100",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(188, 222, 245)"
+    },
+    {
+        "property_name": "paletteColor3",
+        "group_name": "palette",
+        "title": "Color 3",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "primary",
+        "display_order": "1200",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(71, 167, 235)"
+    },
+    {
+        "property_name": "paletteColor4",
+        "group_name": "palette",
+        "title": "Color 4",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "primary",
+        "display_order": "1300",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(37, 119, 177)"
+    },
+    {
+        "property_name": "paletteColor5",
+        "group_name": "palette",
+        "title": "Color 5",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "primary",
+        "display_order": "1400",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(24, 88, 134)"
+    },
+    {
+        "property_name": "paletteNeutral1",
+        "group_name": "palette",
+        "title": "Neutral 1",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "neutral",
+        "display_order": "3000",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(254, 254, 254)"
+    },
+    {
+        "property_name": "paletteNeutral2",
+        "group_name": "palette",
+        "title": "Neutral 2",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "neutral",
+        "display_order": "3100",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(140, 140, 140)"
+    },
+    {
+        "property_name": "paletteNeutral3",
+        "group_name": "palette",
+        "title": "Neutral 3",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "neutral",
+        "display_order": "3200",
+        "value_parameters": "hidePalette=true",
+        "property_value": "rgb(20, 20, 20)"
+    },
+    {
+        "property_name": "progressBarColor",
+        "group_name": "misc",
+        "title": "Progress bar color",
+        "description": "The progress bar appears at the top of the window when the system is waiting for a response from the server",
+        "property_type": "value",
+        "value_type": "color",
+        "display_order": "300",
+        "property_value": "@xf-paletteAccent2"
+    },
+    {
+        "property_name": "publicFaviconUrl",
+        "group_name": "basic",
+        "title": "Favicon URL (32x32)",
+        "description": "Path to the small logo that is associated with bookmarks pointing to your site",
+        "property_type": "value",
+        "value_type": "string",
+        "value_group": "logo",
+        "display_order": "400",
+        "property_value": ""
+    },
+    {
+        "property_name": "publicFooter",
+        "group_name": "footer",
+        "title": "Footer",
+        "description": "The footer is the primary element that sits below the main content on all public pages",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmall",
+            "color": "@xf-paletteColor2",
+            "background-color": "xf-intensify(@xf-paletteColor5, 12%)"
+        }
+    },
+    {
+        "property_name": "publicFooterLink",
+        "group_name": "footer",
+        "title": "Footer links",
+        "description": "Controls styling for individual links within the footer",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-paletteColor1"
+        }
+    },
+    {
+        "property_name": "publicHeader",
+        "group_name": "headerNav",
+        "title": "Header/logo row",
+        "description": "The header row contains your logo and sits at the top of every public page",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-paletteColor2",
+            "background-color": "@xf-paletteColor5"
+        }
+    },
+    {
+        "property_name": "publicHeaderAdjustColor",
+        "group_name": "headerNav",
+        "title": "Header adjustment color",
+        "description": "The color of the header background is adjusted to be used as the background for the inbox and alerts area in the header",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "header",
+        "display_order": "100",
+        "property_value": "fade(@xf-paletteNeutral3, 15%)"
+    },
+    {
+        "property_name": "publicLogoUrl",
+        "group_name": "basic",
+        "title": "Logo URL",
+        "description": "The web path from your site's XenForo installation directory to your logo image.",
+        "property_type": "value",
+        "value_type": "string",
+        "value_group": "logo",
+        "display_order": "100",
+        "property_value": "styles/default/xenforo/logo.png"
+    },
+    {
+        "property_name": "publicLogoUrl2x",
+        "group_name": "basic",
+        "title": "2x logo URL",
+        "description": "The path to a double-resolution / retina version of your logo image",
+        "property_type": "value",
+        "value_type": "string",
+        "value_group": "logo",
+        "display_order": "200",
+        "property_value": ""
+    },
+    {
+        "property_name": "publicMetadataLogoUrl",
+        "group_name": "basic",
+        "title": "Metadata Logo URL",
+        "description": "Path to the metadata / OpenGraph logo used by your site on social media",
+        "property_type": "value",
+        "value_type": "string",
+        "value_group": "logo",
+        "display_order": "300",
+        "property_value": ""
+    },
+    {
+        "property_name": "publicNav",
+        "group_name": "headerNav",
+        "title": "Navigation row",
+        "description": "The navigation row sits below the header and contains the primary site navigation tabs and menus",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-paletteColor2",
+            "background-color": "@xf-paletteColor5"
+        }
+    },
+    {
+        "property_name": "publicNavCollapseWidth",
+        "group_name": "headerNav",
+        "title": "Navigation collapse width",
+        "description": "Below this page width, the navigation system will collapse down into an off canvas menu",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "navigation",
+        "display_order": "1300",
+        "property_value": "@xf-responsiveMedium"
+    },
+    {
+        "property_name": "publicNavPaddingH",
+        "group_name": "headerNav",
+        "title": "Navigation padding horizontal",
+        "description": "Defines the amount of padding applied horizontally to each main navigational tab in the header",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "navigation",
+        "display_order": "1100",
+        "property_value": "15px"
+    },
+    {
+        "property_name": "publicNavPaddingV",
+        "group_name": "headerNav",
+        "title": "Navigation padding vertical",
+        "description": "This value defines the amount of padding applied to the main navigational tabs in the header",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "navigation",
+        "display_order": "1000",
+        "property_value": "8px"
+    },
+    {
+        "property_name": "publicNavSelected",
+        "group_name": "headerNav",
+        "title": "Navigation row - selected tab",
+        "description": "Additional styling to apply to navigation tabs when they are selected",
+        "property_type": "css",
+        "display_order": "20300",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "border_radius",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-linkColor",
+            "font-weight": "@xf-fontWeightHeavy",
+            "background-color": "@xf-contentAltBg",
+            "border-top-left-radius": "@xf-borderRadiusSmall",
+            "border-top-right-radius": "@xf-borderRadiusSmall"
+        }
+    },
+    {
+        "property_name": "publicNavSticky",
+        "group_name": "headerNav",
+        "title": "Sticky navigation element",
+        "description": "If you intend for some or all of your header to stick to the top of the page when it is scrolled, choose which elements should stick",
+        "property_type": "value",
+        "value_type": "radio",
+        "value_group": "navigation",
+        "display_order": "1200",
+        "value_parameters": "primary={{ phrase('primary_navigation_row_only') }}\nall={{ phrase('primary_and_sub_navigation_rows') }}\nnone={{ phrase('none') }}",
+        "property_value": "primary"
+    },
+    {
+        "property_name": "publicNavTab",
+        "group_name": "headerNav",
+        "title": "Navigation row - tab",
+        "description": "Controls the styling of individual tab elements within the navigation row",
+        "property_type": "css",
+        "display_order": "20200",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-paletteColor2",
+            "text-decoration": "none"
+        }
+    },
+    {
+        "property_name": "publicNavTabHover",
+        "group_name": "headerNav",
+        "title": "Navigation row - hovered tab",
+        "description": "Additional styling to apply to navigation tabs when the pointer hovers over them",
+        "property_type": "css",
+        "display_order": "20400",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "text-decoration": "none",
+            "background-color": "fade(@xf-publicNavTab--color, 6%)"
+        }
+    },
+    {
+        "property_name": "publicStaffBar",
+        "group_name": "headerNav",
+        "title": "Staff tools bar",
+        "description": "Visible only to staff, the staff tools bar sits above the header and contains items such as reported content, the moderation queue...",
+        "property_type": "css",
+        "display_order": "20700",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmall",
+            "color": "@xf-paletteColor2",
+            "background-color": "xf-intensify(@xf-paletteColor5, 12%)",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "xf-intensify(@xf-publicStaffBar--background-color, 4%)"
+        }
+    },
+    {
+        "property_name": "publicSubNav",
+        "group_name": "headerNav",
+        "title": "Sub-navigation row",
+        "description": "Below the main navigation row, this row shows content associated with the selected main navigation tab",
+        "property_type": "css",
+        "display_order": "20500",
+        "css_components": [
+            "text",
+            "background",
+            "border",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmall",
+            "color": "@xf-linkColor",
+            "background-color": "@xf-contentAltBg",
+            "border-bottom-width": "@xf-borderSize",
+            "border-bottom-color": "@xf-borderColorHeavy"
+        }
+    },
+    {
+        "property_name": "publicSubNavElHover",
+        "group_name": "headerNav",
+        "title": "Sub-navigation row - hovered element",
+        "description": "Additional styling applied to sub-navigation tabs when the pointer hovers over them",
+        "property_type": "css",
+        "display_order": "20600",
+        "css_components": [
+            "text",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-linkHoverColor"
+        }
+    },
+    {
+        "property_name": "responsiveEdgeSpacerRemoval",
+        "group_name": "page",
+        "title": "Page edge spacer removal break point",
+        "description": "When the page is narrower than this value, the spacers at the edge of the page are discarded",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "responsive",
+        "display_order": "2300",
+        "property_value": "@xf-responsiveMedium"
+    },
+    {
+        "property_name": "responsiveMedium",
+        "group_name": "page",
+        "title": "Medium responsive break point",
+        "description": "Medium width styling rules are used below this page width value",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "responsive",
+        "display_order": "2100",
+        "property_value": "650px"
+    },
+    {
+        "property_name": "responsiveNarrow",
+        "group_name": "page",
+        "title": "Narrow responsive break point",
+        "description": "The page is considered 'narrow' if its width is less than this value",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "responsive",
+        "display_order": "2200",
+        "property_value": "480px"
+    },
+    {
+        "property_name": "responsiveWide",
+        "group_name": "page",
+        "title": "Wide responsive break point",
+        "description": "The page will use the 'wide' styling rules if its width is below this value, and the 'full' rules if the width exceeds it",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "responsive",
+        "display_order": "2000",
+        "property_value": "900px"
+    },
+    {
+        "property_name": "sidebarSpacer",
+        "group_name": "page",
+        "title": "Sidebar and side navigation spacer",
+        "description": "Distance between the main content and the sidebar",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "sidebar",
+        "display_order": "1000",
+        "property_value": "10px"
+    },
+    {
+        "property_name": "sidebarWidth",
+        "group_name": "page",
+        "title": "Sidebar and side navigation width",
+        "description": "Width of any elements that make up the sidebar",
+        "property_type": "value",
+        "value_type": "unit",
+        "value_group": "sidebar",
+        "display_order": "1100",
+        "property_value": "250px"
+    },
+    {
+        "property_name": "standaloneTab",
+        "group_name": "tab",
+        "title": "Standalone tabs",
+        "description": "Tabs that are not part of block headers are styled here",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeNormal",
+            "color": "@xf-paletteColor4",
+            "background-color": "@xf-contentAltBg"
+        }
+    },
+    {
+        "property_name": "standaloneTabSelected",
+        "group_name": "tab",
+        "title": "Standalone tabs - selected tab",
+        "description": "The selected tab in groups that are not part of block headers",
+        "property_type": "css",
+        "display_order": "20100",
+        "css_components": [
+            "text",
+            "background",
+            "border_color_simple",
+            "extra"
+        ],
+        "property_value": {
+            "color": "@xf-textColorFeature",
+            "border-color": "@xf-borderColorFeature"
+        }
+    },
+    {
+        "property_name": "styleType",
+        "group_name": "palette",
+        "title": "Style type",
+        "description": "This defines the general type of style in use based on whether the content is placed on a light or dark background. This may change how colors are selected in certain scenarios.",
+        "property_type": "value",
+        "value_type": "radio",
+        "value_group": "setup",
+        "display_order": "100",
+        "value_parameters": "light={{ phrase('light') }}\ndark={{ phrase('dark') }}",
+        "property_value": "light"
+    },
+    {
+        "property_name": "textColor",
+        "group_name": "color",
+        "title": "Text color",
+        "description": "Unless otherwise specified, text will be this color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "textBasic",
+        "display_order": "100",
+        "property_value": "@xf-paletteNeutral3"
+    },
+    {
+        "property_name": "textColorAccentContent",
+        "group_name": "color",
+        "title": "Accented content text color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "textOther",
+        "display_order": "3200",
+        "property_value": "@xf-paletteAccent3"
+    },
+    {
+        "property_name": "textColorAttention",
+        "group_name": "color",
+        "title": "Attention-grabbing text color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "textOther",
+        "display_order": "3300",
+        "property_value": "@xf-paletteAccent2"
+    },
+    {
+        "property_name": "textColorDimmed",
+        "group_name": "color",
+        "title": "Dimmed text color",
+        "description": "Used when less-important text is placed next to normal text",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "textBasic",
+        "display_order": "200",
+        "property_value": "mix(@xf-paletteNeutral2, @xf-paletteNeutral3)"
+    },
+    {
+        "property_name": "textColorEmphasized",
+        "group_name": "color",
+        "title": "Emphasized text color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "textOther",
+        "display_order": "3100",
+        "property_value": "@xf-paletteColor4"
+    },
+    {
+        "property_name": "textColorFeature",
+        "group_name": "color",
+        "title": "Feature text color",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "textOther",
+        "display_order": "3000",
+        "property_value": "@xf-paletteColor3"
+    },
+    {
+        "property_name": "textColorMuted",
+        "group_name": "color",
+        "title": "Muted text color",
+        "description": "Text is further de-emphasised using this style",
+        "property_type": "value",
+        "value_type": "color",
+        "value_group": "textBasic",
+        "display_order": "300",
+        "property_value": "@xf-paletteNeutral2"
+    },
+    {
+        "property_name": "tooltip",
+        "group_name": "tooltip",
+        "title": "Tooltip",
+        "description": "Certain elements have special floating tooltips, which are controlled here",
+        "property_type": "css",
+        "display_order": "20000",
+        "css_components": [
+            "text",
+            "background",
+            "border_radius",
+            "padding",
+            "extra"
+        ],
+        "property_value": {
+            "font-size": "@xf-fontSizeSmaller",
+            "color": "contrast(@xf-paletteNeutral3)",
+            "background-color": "fade(@xf-paletteNeutral3, 80%)",
+            "border-radius": "@xf-borderRadiusMedium",
+            "padding-top": "5px",
+            "padding-right": "5px",
+            "padding-bottom": "5px",
+            "padding-left": "5px"
+        }
+    },
+    {
+        "property_name": "whatsNewNavStyle",
+        "group_name": "misc",
+        "title": "What's new navigation style",
+        "description": "This controls how the navigation is displayed in the what's new section. Side navigation works better with more sections but requires more space.",
+        "property_type": "value",
+        "value_type": "radio",
+        "display_order": "200",
+        "value_parameters": "tabs={{ phrase('tabs') }}\nsidenav={{ phrase('side_navigation') }}",
+        "property_value": "tabs"
+    },
+    {
+        "property_name": "zIndexMultipler",
+        "group_name": "misc",
+        "title": "Z-index multipler",
+        "description": "Controls the relative 'height' of elements in the Z-dimension (perpendicular to the screen). Unless you have a specific reason to change this, leave it alone...",
+        "property_type": "value",
+        "value_type": "number",
+        "display_order": "500",
+        "value_parameters": "min=1",
+        "property_value": "100"
+    }
+]

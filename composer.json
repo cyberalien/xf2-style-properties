@@ -1,0 +1,23 @@
+{
+	"name": "cyberalien/xf-style-properties",
+	"description": "XenForo style properties import/export",
+	"version": "1.0.0",
+	"type": "library",
+	"license": "MIT",
+	"homepage": "https://www.artodia.com/",
+	"require": {
+		"php": ">=5.4",
+		"cyberalien/simple-tokenizer": "*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*"
+	},
+	"config": {
+		"bin-dir": "bin"
+	},
+	"autoload": {
+		"psr-4": {
+			"CyberAlien\\XFStyleProperties\\": "lib"
+		}
+	}
+}

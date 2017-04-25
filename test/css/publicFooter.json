@@ -1,0 +1,23 @@
+{
+    "group_name": "footer",
+    "title": "Footer",
+    "description": "The footer is the primary element that sits below the main content on all public pages",
+    "property_type": "css",
+    "css_components": [
+        "text",
+        "background",
+        "border",
+        "extra"
+    ],
+    "value_type": "",
+    "value_parameters": "",
+    "depends_on": "",
+    "value_group": "",
+    "property_value": {
+        "font-size": "@xf-fontSizeSmall",
+        "color": "@xf-linkColor",
+        "background-color": "xf-intensify(@xf-paletteColor5, 12%)",
+        "extra": "cursor: pointer;"
+    },
+    "display_order": 20000
+}
