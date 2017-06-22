@@ -8,6 +8,11 @@ class Property {
     protected $name;
     protected $data = null;
 
+	/**
+	 * @var bool True if value has been changed by import
+	 */
+    public $updated = false;
+
     /**
      * List of attributes used for each component
      *
@@ -58,6 +63,7 @@ class Property {
         } else {
             $this->data['property_value'] = $value;
         }
+        $this->updated = false;
     }
 
     /**
@@ -70,20 +76,39 @@ class Property {
         return $this->data['property_value'];
     }
 
+	/**
+	 * Convert string to list of tokens to optimize import of multiple properties from same .less file
+	 *
+	 * @param $data
+	 * @return array
+	 */
+    public static function tokenizeLess($data)
+    {
+	    $tokenizer = new Tokenizer([
+		    'lessSyntax' => true,
+		    'splitRules' => true,
+	    ]);
+
+	    return $tokenizer->tree($data);
+    }
+
     /**
      * Set data from LESS string
      *
      * @param $data
-     * @return boolean
+     * @param $tokens
+     * @return boolean True if property was found in less code
      */
-    public function fromLess($data)
+    public function fromLess($data, $tokens = null)
     {
-        $tokenizer = new Tokenizer([
-            'lessSyntax' => true,
-            'splitRules' => true,
-        ]);
+    	if ($tokens === null) {
+		    $tokenizer = new Tokenizer([
+			    'lessSyntax' => true,
+			    'splitRules' => true,
+		    ]);
 
-        $tokens = $tokenizer->tree($data);
+		    $tokens = $tokenizer->tree($data);
+	    }
 
         if ($this->data['property_type'] !== 'css') {
             // Import scalar variable
@@ -91,7 +116,11 @@ class Property {
             foreach ($tokens as $token) {
                 if ($token['token'] === 'rule' && $token['key'] === $expected) {
                     // Found it
-                    $this->data['property_value'] = $token['value'];
+	                $newValue = $this->_fixImportedType($this->data['property_value'], $token['value']);
+	                if ($this->data['property_value'] !== $newValue) {
+		                $this->data['property_value'] = $newValue;
+		                $this->updated = true;
+	                }
                     return true;
                 }
             }
@@ -99,7 +128,9 @@ class Property {
         }
 
         // Parse all tokens for extract CSS style property data
-        $data = [];
+	    $values = [];
+    	$oldValues = $this->data['property_value'];
+    	$updated = false;
         foreach ($tokens as $token) {
             switch ($token['token']) {
                 case '{':
@@ -118,7 +149,7 @@ class Property {
                         ]
                     ));
                     if (strlen($value)) {
-                        $data['extra'] = $value;
+	                    $values['extra'] = $value;
                     }
                     break;
 
@@ -134,7 +165,16 @@ class Property {
                         break;
                     }
 
-                    $data[$key] = $token['value'];
+	                $newValue = $token['value'];
+                    if (!isset($oldValues[$key])) {
+                    	$updated = true;
+                    } else {
+                    	$newValue = $this->_fixImportedType($oldValues[$key], $token['value']);
+                    	if ($oldValues[$key] !== $newValue) {
+		                    $updated = true;
+	                    }
+                    }
+                    $values[$key] = $newValue;
                     break;
 
                 default:
@@ -142,8 +182,11 @@ class Property {
             }
         }
 
-        $this->data['property_value'] = $data;
-        return count($data) > 0;
+        if ($updated) {
+	        $this->data['property_value'] = $values;
+	        $this->updated = true;
+        }
+        return count($values) > 0;
     }
 
     /**
@@ -186,7 +229,11 @@ class Property {
         $result = '';
         $included = [];
 
-        foreach ($this->data['css_components'] as $component) {
+        $components = $this->data['css_components'];
+        if (is_string($components)) {
+        	$components = explode(',', $components);
+        }
+        foreach ($components as $component) {
             // New line before each section
             $newLine = $result === '' ? '' : "\n";
 
@@ -227,7 +274,11 @@ class Property {
      */
     protected function _validCSSComponent($component)
     {
-        foreach ($this->data['css_components'] as $block) {
+	    $components = $this->data['css_components'];
+	    if (is_string($components)) {
+		    $components = explode(',', $components);
+	    }
+        foreach ($components as $block) {
             foreach (self::cssComponents[$block] as $attr) {
                 if ($attr === $component) {
                     return true;
@@ -235,5 +286,31 @@ class Property {
             }
         }
         return false;
+    }
+
+	/**
+	 * Change type of $newValue to match $oldValue
+	 *
+	 * @param $oldValue
+	 * @param $newValue
+	 * @return mixed
+	 */
+    protected function _fixImportedType($oldValue, $newValue)
+    {
+	    switch (gettype($oldValue)) {
+		    case 'boolean':
+			    $newValue = boolval($newValue);
+			    break;
+
+		    case 'integer':
+		    case 'double':
+			    if (is_float($this->data['property_value'])) {
+				    $newValue = floatval($newValue);
+			    } else {
+				    $newValue = intval($newValue);
+			    }
+			    break;
+	    }
+	    return $newValue;
     }
 }

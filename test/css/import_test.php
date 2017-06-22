@@ -81,5 +81,40 @@ class CSSErrorsTest extends \PHPUnit\Framework\TestCase {
   opacity: 1;
 }'
         ], $result);
+        $this->assertTrue($prop->updated);
+    }
+
+	/**
+	 * Test exporting and importing same css property
+	 */
+    public function testUpdatingInput()
+    {
+    	$defaultValue = '{"font-size":"@xf-fontSizeNormal","color":"@xf-textColor","background-color":"mix(@xf-contentBg, @xf-paletteColor1, 60%)","border-width":"@xf-borderSize","border-radius":"@xf-borderRadiusMedium","border-top-color":"@xf-borderColorHeavy","border-right-color":"@xf-borderColorLight","border-bottom-color":"@xf-borderColorLight","border-left-color":"@xf-borderColorHeavy","padding":"@xf-paddingMedium"}';
+
+	    $prop = new Property('input', [
+	    	'property_name' => 'input',
+	    	'property_type' => 'css',
+	    	'css_components'    => 'text,background,border,border_radius,padding,extra',
+	    	'property_value'    => json_decode($defaultValue, true)
+	    ]);
+	    $less = $prop->exportLessCode(true);
+	    $prop->fromLess($less);
+
+	    $list1 = json_decode($defaultValue, true);
+	    $list2 = $prop->getValue();
+	    foreach ($list1 as $key => $oldValue) {
+	    	if (!isset($list2[$key])) {
+	    		echo 'Missing key: ', $key, "\n";
+		    } elseif ($list2[$key] !== $list1[$key]) {
+	    		echo 'Different values for key ', $key, ': ', $list1[$key], ' and ', $list2[$key], "\n";
+		    }
+	    }
+	    foreach ($list2 as $key => $newValue) {
+	    	if (!isset($list1[$key])) {
+	    		echo 'Missing key2: ', $key, "\n";
+		    }
+	    }
+
+	    $this->assertFalse($prop->updated);
     }
 }
